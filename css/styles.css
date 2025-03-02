@@ -1,0 +1,239 @@
+/* Estilos generales */
+body {
+    text-align: center;
+    background-color: #0a0a0a;
+    color: #00ffcc;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    /*background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);*/
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+#paus{
+    width: 50%;
+    padding: inherit;
+    margin: 0 auto;
+    display: flex;          
+}
+
+/* Contenedor del botón "Entrar" */
+#enter-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(10, 10, 10, 0.9);
+    z-index: 1000;
+}
+
+/* Estilo del botón "Entrar" */
+#enter-btn {
+    background-color: #00ffcc;
+    color: #0a0a0a;
+    border: 2px solid #00ffcc;
+    border-radius: 50%; /* Hace el botón redondo */
+    padding: 20px 40px;
+    font-size: 24px;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    width: 150px; /* Tamaño del botón */
+    height: 150px; /* Tamaño del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#enter-btn:hover {
+    background-color: #0a0a0a;
+    color: #00ffcc;
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+}
+
+/* Contenedor del video */
+#intro-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001; /* Por encima del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Pantallas del juego */
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Botones */
+button {
+    background-color: #00ffcc;
+    color: #0a0a0a;
+    border: 2px solid #00ffcc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto Mono', monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #0a0a0a;
+    color: #00ffcc;
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+}
+
+/* Canvas */
+canvas {
+    border: 2px solid #00ffcc;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px #00ffcc;
+}
+
+/* Overlay de pausa */
+#pause-overlay {
+    width: 15%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #00ffcc;
+    box-shadow: 0 0 20px #00ffcc;
+    
+}
+
+/* Game Over */
+#game-over {
+    font-size: 24px;
+    color: #ff0066;
+    text-shadow: 0 0 10px #ff0066, 0 0 20px #ff0066;
+    display: none;
+}
+
+/* Texto y títulos */
+h1, h2, p {
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+/* Contenedor de la siguiente pieza */
+#next-piece-container {
+    border: 2px solid #00ffcc;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+/* Ranking */
+#ranking-screen {
+    display: none;
+}
+
+#ranking-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    text-align: center;
+}
+
+#ranking-list p {
+    list-style-type: none;
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Efecto fluorescente para el oro */
+#ranking-list p:nth-child(1) {
+    color: gold;
+    text-shadow: 0 0 10px gold, 0 0 20px gold;
+}
+
+/* Efecto fluorescente para la plata */
+#ranking-list p:nth-child(2) {
+    color: silver;
+    text-shadow: 0 0 10px silver, 0 0 20px silver;
+}
+
+/* Efecto fluorescente para el bronce */
+#ranking-list p:nth-child(3) {
+    color: #cd7f32;
+    text-shadow: 0 0 10px #cd7f32, 0 0 20px #cd7f32;
+}
+
+/* Formulario de ranking */
+#ranking-form {
+    margin-top: 20px;
+}
+
+li{
+    list-style-type: none;
+    font-size: 18px;
+    margin: 10px 0;
+}
+#ranking-form input {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: 2px solid #00ffcc;
+    border-radius: 5px;
+    background-color: #0a0a0a;
+    color: #00ffcc;
+}
+
+#ranking-form button {
+    padding: 5px 10px;
+    font-size: 16px;
+}

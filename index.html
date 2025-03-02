@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Urbano Futurista</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Botón "Entrar" -->
+    <div id="enter-container">
+        <button id="enter-btn">Entrar</button>
+    </div>
+
+    <!-- Video introductorio (oculto inicialmente) -->
+    <div id="intro-video-container" style="display: none;">
+        <video id="intro-video" muted playsinline>
+            <source src="./video/introTetri-1.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
+    </div>
+
+    <!-- Pantalla de Inicio (oculta inicialmente) -->
+    <div id="start-screen" class="screen" style="display: none;">
+        <h1>Tetris Urbano</h1>
+        <div id="ranking-list"></div>
+        <button id="start-btn">Iniciar Juego</button>
+        <button id="instructions-btn">Instrucciones</button>
+        <div id="instructions" style="display: none;">
+            <h2>Instrucciones</h2>
+            <p>Usa las flechas para mover las piezas:</p>
+            <ul>
+                <li>←: Mover a la izquierda</li>
+                <li>→: Mover a la derecha</li>
+                <li>↑: Rotar la pieza</li>
+                <li>↓: Bajar más rápido</li>
+            </ul>
+            <button id="close-instructions-btn">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de Juego (oculta inicialmente) -->
+    <div id="game-screen" class="screen" style="display: none;">
+        <header>
+            <h1>Tetris Urbano</h1>
+        </header>
+        <main>
+            <table>
+                <tbody>
+                    <tr>
+                        <td id="tb1">
+                            <button id="pause-btn">Pausar</button><br>
+                            <button id="end-btn">Finalizar</button>
+                            <button id="restart-btn" style="display: none;">Reiniciar</button>
+                        </td>
+                        <td id="tb2">
+                            <canvas id="tetris" width="300" height="600"></canvas>
+                            <div id="pause-overlay" style="display: none;">
+                                <img id="paus" src="./img/pausa.webp" alt="Juego en pausa">
+                            </div>
+                            <div id="game-over" style="display: none;">Juego Terminado!</div>
+                        </td>
+                        <td id="tb3">
+                            <div id="next-piece-container">
+                                <p id="proxipieza">Próxima pieza:</p>
+                                <canvas id="next-piece" width="120" height="120"></canvas>
+                            </div>
+                            <div id="scle">
+                                <p id="level">Nivel <br> 1 </p>
+                                <p id="score">Puntaje <br> 0 </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <!-- Pantalla de Ranking (oculta inicialmente) -->
+    <div id="ranking-screen" class="screen" style="display: none;">
+        <h1>Ranking</h1>
+        <div id="ranking-list"></div>
+        <form id="ranking-form" style="display: none;">
+            <label for="initials">Ingresa tus iniciales (3 letras):</label>
+            <input type="text" id="initials" maxlength="3" required>
+            <button type="submit">Guardar</button>
+        </form>
+        <button id="back-to-start-btn">Volver al Inicio</button>
+    </div>
+
+    <!-- Audio -->
+    <audio id="background-music" loop>
+        <source src="./sonidos/fondo.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clear-sound">
+        <source src="./sonidos/clear.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="level-up-sound">
+        <source src="./sonidos/next-level-160613.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clear-row-sound">
+        <source src="./sonidos/Explosion.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
